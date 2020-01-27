@@ -1,4 +1,4 @@
-# 2019_ENSEIRB_MR_SIMULATION
+# 2020_ENSEIRB_MR_SIMULATION
 
 <p align="Center">Ce cours a été présenté en 2020 dans l'école d'ingénieur <b>ENSEIRB</b>.</p>
 
