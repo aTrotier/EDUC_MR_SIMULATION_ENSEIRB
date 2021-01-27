@@ -26,7 +26,7 @@ end
 
 
 % ===== Plot the Results ======
-
+figure;
 time = [0:N-1]*dT;
 plot(time,M(1,:),'b-',time,M(2,:),'r--',time,M(3,:),'g-.');
 legend('M_x','M_y','M_z');
@@ -35,10 +35,6 @@ ylabel('Magnetization');
 axis([min(time) max(time) -1 1]);
 grid on;
 
-
-phi = 2*pi*df*dT/1000
-
-zrot(phi)
 
 %% 1) Gradient Echo
 % The sequence simply consists of 60-degree excitation pulses about the y-axis, spaced TR apart.
