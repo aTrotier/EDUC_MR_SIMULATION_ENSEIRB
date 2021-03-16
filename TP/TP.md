@@ -8,7 +8,7 @@ Le signal IRM peut-être représenté grâce à l'équation de Bloch :
 
 $$\frac{d\vec{M}}{dt} = \gamma \vec{M} \times \vec{B}_{ext} + \frac{1}{T_1} (M_0 - M_z)\vec{z} - \frac{1}{T_2} \vec{M}_\perp$$
 
-<h3>1. Préparation des sous-fonctions</h3>
+<h2>1. Préparation des sous-fonctions</h2>
 Préparez les fonctions nécessaires à la simulation du signal IRM :
 - xrot(angle), yrot(angle) et zrot(angle) : qui retourne une matrice de rotation à partir d'un angle (en radian)
 - throt(phi,theta) : si l'angle de rotation est transverse (différent de x/y) (utilisez les fonctions précédentes : $Rth(phi,theta)=Rz(theta)*Rx(phi)*Rz(-theta)$)
@@ -16,14 +16,14 @@ Préparez les fonctions nécessaires à la simulation du signal IRM :
 
 Validez que les fonctions fonctionnes bien (affichage d'une flèche avant et après rotation par exemple)
 
-<h3>2. Signal de précession libre</h3>
+<h2>2. Signal de précession libre</h2>
 Simuler 2 signaux de precession libre (correspondant à l'évolution du signal après une impulsion radiofréquence)  avec une valeur d'off-resonance de 0 ou 10 Hz :
 
-- angle = $$\frac{\pi}{2}$$ correspondant à une aimantation de départ selon l'axe $$\vec{M} = \begin{bmatrix}
+- $angle = \frac{\pi}{2}$ correspondant à une aimantation de départ selon l'axe $\vec{M} = \begin{bmatrix}
    0\\ 
    1\\
   0
-  \end{bmatrix}$$  
+  \end{bmatrix}$
 - Pas de simulation : 1 ms
 - Durée de simulation : 1000 ms
 - Off-resonance : 0 ou 10 Hz
@@ -34,8 +34,9 @@ Simuler 2 signaux de precession libre (correspondant à l'évolution du signal a
 
 
 
-<h3>3. Echo de gradient</h3>
-![Gradient_Echo](/Users/aurelien/Documents/WORK/Cours/ENSEIRB/2020_ENSEIRB_MR_SIMULATION/TP/img/Gradient_Echo.png)
+<h2>3. Echo de gradient</h2>
+
+![Gradient_Echo](img/Gradient_Echo.png)
 
 Simuler le signal d'une séquence écho de gradient avec les paramètres ci-dessous :
 
@@ -61,11 +62,11 @@ Dans le cas d'une séquence **FLASH** (**F**ast **L**ow **A**ngle **SH**ot) l'ai
 
 
 
-<h3>4. Spin echo</h3>
+<h2>4. Spin echo</h2>
 <h5><u>Simulation</u></h5>
 
 
-![Spin_Echo](/Users/aurelien/Documents/WORK/Cours/ENSEIRB/2020_ENSEIRB_MR_SIMULATION/TP/img/Spin_Echo.png)
+![Spin_Echo](img/Spin_Echo.png)
 
 Simuler le signal au cours d'un TR et affichez l'aimantation Mx, My et Mz. 
 
@@ -95,7 +96,7 @@ Refaites la même simulation plusieurs fois pour voir les différences et augmen
 
 * Etendre ce calcul pour une séquence Turbo-spin echo (Echo Train Lenght = 8) [voir présentation pour propagation des équations].
 
-  ![Turbo_Spin_Echo](/Users/aurelien/Documents/WORK/Cours/ENSEIRB/2020_ENSEIRB_MR_SIMULATION/TP/img/Turbo_Spin_Echo.png)
+  ![Turbo_Spin_Echo](img/Turbo_Spin_Echo.png)
 
 * Calculez le steady-state au 1er TE et comparez avec le steady-state de la séquence Spin-Echo. Vérifiez la valeur en mettant un Echo Train Length = 1. Expliquez ce résultat.
 
@@ -172,7 +173,7 @@ dfreq = 0;
 <h3>OPTIONAL : BSSFP et banding artefacts</h3>
 BSSFP est l'acronyme pour "Balanced Steady-State Free Precession". C'est une dans laquelle les gradients sont équilibré (dont la somme au cours du TR = 0)
 
-<img src="/Users/aurelien/Documents/WORK/Cours/ENSEIRB/2020_ENSEIRB_MR_SIMULATION/TP/img/bssfp_sequence.png" alt="bssfp_sequence" style="zoom: 50%;" /><img src="/Users/aurelien/Documents/WORK/Cours/ENSEIRB/2020_ENSEIRB_MR_SIMULATION/TP/img/bssfp.png" alt="bssfp" style="zoom:50%;" />
+<img src="img/bssfp_sequence.png" alt="bssfp_sequence" style="zoom: 50%;" /><img src="img/bssfp.png" alt="bssfp" style="zoom:50%;" />
 
 Cette séquence est donc équivalente à la séquence d'écho de gradient simulé dans la partie 3. Elle a pour particularité d'avoir un fort signal qui est un compromis T1/T2 avec des TRs court ainsi que de généré des **artéfacts de bande noire**.
 
